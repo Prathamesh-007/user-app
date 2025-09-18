@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const BASE_URL =  'https://user-backend-bg84.onrender.com/';
+const BASE_URL =  'https://user-backend-bg84.onrender.com';
 
 function UserComponent() {
   const [users, setUsers] = useState([]);
