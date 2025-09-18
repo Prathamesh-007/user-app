@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const BASE_URL =  'https://5e2e33cf9e71.ngrok-free.app';
+const BASE_URL =  'https://user-backend-bg84.onrender.com/';
 
 function UserComponent() {
   const [users, setUsers] = useState([]);
@@ -10,11 +10,7 @@ function UserComponent() {
 
   // Fetch all users on component mount
   useEffect(() => {
-    fetch(`${BASE_URL}/allUsers`, {
-  headers: {
-    'ngrok-skip-browser-warning': 'true'
-  }
-})
+    fetch(`${BASE_URL}/allUsers`)
   .then(res => res.json())
   .then(data => setUsers(data))
   .catch(err => {
@@ -27,11 +23,7 @@ function UserComponent() {
   const handleFindUser = () => {
     if (!userId) return;
 
-    fetch(`${BASE_URL}/find/${userId}`, {
-  headers: {
-    'ngrok-skip-browser-warning': 'true'
-  }
-})
+    fetch(`${BASE_URL}/find/${userId}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('User not found');
